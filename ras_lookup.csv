@@ -1,0 +1,79 @@
+From,https://www.census.gov/data-tools/demo/codebook/ahs/ahsdict.html?s_appName=ahsdict&s_searchvalue=ras&s_year=2011&s_topic=64179F8D1BC221FC18DE17F591A06B65ECBD2265722B9673E3748D6C3C801F2DC87D77E6C8E6B324B39533C5BE9E8041
+improvement_type_id,description
+1,Disaster required repairs
+2,Created finished bathroom from unfinished space
+3,Created finished bedroom from unfinished space
+4,Job type deleted in 1999
+5,Created finished recreation room from unfinished space
+6,Created other finished inside room from unfinished space
+7,Added bathroom onto home
+8,Added kitchen onto home
+9,Added bedroom onto home
+10,Added other inside room onto home
+11,Added attached garage onto home
+12,Added porch onto home
+13,Added deck onto home
+14,Added carport onto home
+15,Added other outside structure onto home
+16,Job type deleted in 1999
+17,Job type deleted in 1999
+18,Job type deleted in 1999
+19,Job type deleted in 1999
+20,Job type deleted in 1999
+21,Job type deleted in 1999
+22,Job type deleted in 1999
+23,Job type deleted in 1999
+24,Job type deleted in 1999
+25,Job type deleted in 1999
+26,Job type deleted in 1999
+27,Job type deleted in 1999
+28,Job type deleted in 1999
+29,Job type deleted in 1999
+30,Job type deleted in 1999
+31,Job type deleted in 1999
+32,Job type deleted in 1999
+33,Job type deleted in 1999
+34,Job type deleted in 1999
+35,Bedroom created through structural changes
+36,Other room created through structural changes
+37,Added/replaced roof over entire home
+38,Added/replaced siding on home
+39,Job type deleted in 1999
+40,Added/replaced internal water pipes in home
+41,Job type deleted in 1999
+AHS Dictionary Codebook
+2
+Downloaded on Saturday June 17 2017 at 11:34
+42,Added/replaced electrical wiring fuse boxes or breaker switches in home
+43,Job type deleted in 1999
+44,Job type deleted in 1999
+45,Added/replaced doors or windows in home
+46,Job type deleted in 1999
+47,Added/replaced plumbing fixtures in home
+48,Job type deleted in 1999
+49,Added/replaced insulation in home
+50,Job type deleted in 1999
+51,Job type deleted in 2005
+52,Installed wall-to-wall carpeting
+53,Added other types of flooring such as wood tile marble or vinyl
+54,Job type deleted in 1999
+55,Installed paneling or ceiling tiles
+56,Job type deleted in 1999
+57,Added/replaced central air conditioning
+58,Added/replaced built-in heating equipment
+59,Job type deleted in 1999
+60,Added/replaced septic tank
+61,Added/replaced water heater
+62,Added/replaced built-in dishwasher
+63,Added/replaced garbage disposal
+64,Other major improvements or repairs inside home(up to three could be reported)
+65,Added/replaced driveways or walkways
+66,Added/replaced fencing or walls
+67,Added/replaced patio terrace or detached deck
+68,Added/replaced swimming pool tennis court or other recreational structure
+69,Added/replaced shed detached garage or other building
+70,Other major improvements or repairs to lot or yard (up to three could be reported)
+71,Remodeled bathroom
+72,Remodeled kitchen
+73,Bathroom created through structural changes
+74,Added/replaced security system in home
