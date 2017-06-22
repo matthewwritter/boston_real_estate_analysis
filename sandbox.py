@@ -99,4 +99,4 @@ if __name__ == '__main__':
                                'ras': 'improvement_type_id'})
     print(df.head().to_string())
     df.improvement_cost[lambda x: x < 1e4].hist(bins=30)
-    print("Distribution of Home Improvement Costs")
+    print("Distribution of Improvement Costs")
