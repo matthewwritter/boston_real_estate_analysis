@@ -84,6 +84,14 @@ def clean_data(
         except ValueError:
             pass
     raw_df = raw_df.rename(columns=column_names)
+    if 'improvement_type_id' in raw_df.columns:
+        try:
+            raw_df = raw_df.merge(
+                pd.read_csv('ras_lookup.csv', skiprows=1),
+                how='left',
+                on='improvement_type_id')
+        except IOError:
+            print("Lookup file ras_lookup.csv not found")
     return raw_df
 
 if __name__ == '__main__':
