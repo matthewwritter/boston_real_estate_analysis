@@ -13,9 +13,7 @@ import urllib
 import pickle
 import random
 import pandas as pd
-
-with open('secretkey.txt','r') as f:
-    SECRETKEY = f.read()
+import os
 
 def test_connection():
     """ No arguments
@@ -23,14 +21,14 @@ def test_connection():
     :return: Nothing, just prints
     """
     url1 = "https://api.enigma.io/v2/data/{}/us.gov.census.ahs.2011.thomimp?conjunction=and"
-    response1 = urllib.urlopen(url1.format(SECRETKEY))
+    response1 = urllib.request.urlopen(url1.format(os.environ['ENIGMA_APPTOKEN']))
     data1 = json.loads(response1.read())
 
-    print data1.keys()
+    print(data1.keys())
     for key in ['info', 'success']:
-        print "\n\n== {} == \n{}".format(key, data1[key])
-    print type(data1['result'])
-    print data1['result'][0]  # Check out the first row of actual data
+        print("\n\n== {} == \n{}".format(key, data1[key]))
+    print(type(data1['result']))
+    print(data1['result'][0])  # Check out the first row of actual data)
 
 
 def is_number(x):
@@ -42,23 +40,32 @@ def is_number(x):
 
 
 def download_data(url_base, max_downloads=1, num_pages=5):
-
-    with open('api_pages_downloaded.txt', 'r') as f:
-        already_used = [int(x) for x in f.read().split('\n') if x]
+    
+    try:
+        with open('api_pages_downloaded.txt', 'r') as f:
+            already_used = [int(x) for x in f.read().split('\n') if x]
+    except FileNotFoundError:
+        already_used = []
 
     # This is designed to prevent the same page from being downloaded again
-    with open('datalist.pkl', 'r') as f:
-        datalist = pickle.load(f)
+    try:
+        with open('datalist.pkl', 'r') as f:
+            datalist = pickle.load(f)
+    except FileNotFoundError:
+        datalist = []
 
     for i in [x for x in
               random.sample(set(range(num_pages)) - set(already_used),
                             max_downloads)]:
-        with open('api_pages_downloaded.txt', 'r') as f:
-            if str(i) in f.read().split('\n'):
-                print "Page {} already in datalist".format(i)
-                continue
-        url = url_base.format(secretkey=SECRETKEY,pagenum=i)
-        response = urllib.urlopen(url)
+        try:
+            with open('api_pages_downloaded.txt', 'r') as f:
+                if str(i) in f.read().split('\n'):
+                    print("Page {} already in datalist".format(i))
+                    continue
+        except FileNotFoundError:
+            pass
+        url = url_base.format(secretkey=os.environ['ENIGMA_APPTOKEN'],pagenum=i)
+        response = urllib.request.urlopen(url)
         data = json.loads(response.read())
         datalist.append(data)
         with open('datalist.pkl', 'w') as f:
